@@ -19,7 +19,7 @@ return new class extends Migration
             $table->text('description');
             $table->integer('quantity');
             $table->string('price');
-            $table->string('category');
+            $table->foreignId('category_id');
             $table->string('image');
             $table->integer('sold')->default(0);
             $table->timestamps();

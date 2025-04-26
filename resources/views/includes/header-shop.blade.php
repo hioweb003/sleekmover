@@ -44,8 +44,8 @@
                         <div class="collapse navbar-collapse justify-content-center" id="navbarNav"> 
                             <ul class="navbar-nav alt-font"> 
                                 <li class="nav-item"><a href="{{ url('/') }}" class="nav-link">Home</a></li>
-                                @foreach($categories as $slug => $name)
-                                <li class="nav-item"><a href="{{ route('shp', ['category' => $slug]) }}" class="nav-link">{{ $name }}</a></li>
+                                @foreach($categories as $item)
+                                <li class="nav-item"><a href="{{ route('shp', ['category' => $item['slug']]) }}" class="nav-link">{{ $item['name'] }}</a></li>
                               @endforeach
                                  {{--  <li class="nav-item"><a href="{{ route('shp',['category' => 'equipment']) }}" class="nav-link">Equipment</a></li>
                                 <li class="nav-item"><a href="{{ route('shp',['category' => 'mattress covers']) }}" class="nav-link">Mattress Covers</a></li>                   

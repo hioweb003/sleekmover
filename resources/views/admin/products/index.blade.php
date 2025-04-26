@@ -36,7 +36,7 @@
                                                      <td><img src="{{asset($item->image)}}" width="60px" height="60px" alt="image"></td> 
                                                 <td>{{$item->pro_name}}</td>
                                             <td>{{$item->slug}}</td>
-                                            <td>{{str_replace('-',' ',ucwords($item->category))}}</td>
+                                            <td>{{ucwords($item->category->cate_name)}}</td>
                                              <td>{{'CA$ '.number_format($item->price,2)}}</td>
                                              
                                               <td>{{$item->quantity}}</td>

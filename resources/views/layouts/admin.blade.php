@@ -72,7 +72,7 @@
                                                           <nav class="sb-sidenav-menu-nested nav">
                                                             <a class="nav-link" href="{{route('product.index')}}">All Product</a>
                                                             <a class="nav-link" href="{{route('product.create')}}">Add New</a>
-                                                            {{-- <a class="nav-link" href="{{route('category.index')}}">Categories</a> --}}
+                                                            <a class="nav-link" href="{{route('admin.category.index')}}">Categories</a>
                                                           </nav>
                                                       </div>
 

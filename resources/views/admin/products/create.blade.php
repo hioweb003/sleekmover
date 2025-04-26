@@ -36,13 +36,9 @@
                       <label for="category">Category</label>
                           <select class="form-control" name="category" required id="category">
                               <option selected disabled>Select...</option>
-                              <option value="boxes">Boxes</option>
-                              <option value="equipment">Equipment</option>
-                              <option value="mattress covers">Mattress Covers</option>
-                              <option value="tv-art-boxes">TV & Art Boxes</option>
-                              <option value="moving-kits">Moving Kits</option>
-                              <option value="packing">Packing</option>
-                              <option value="wrapping">Wrapping</option>
+                              @foreach ($categories as $item)
+                                    <option value="{{ $item->id }}">{{ucwords($item->cate_name)}}</option>
+                              @endforeach
                           </select>
                       </div> 
 

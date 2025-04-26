@@ -23,12 +23,24 @@
         <!-- start section -->
         <section class="position-relative pb-0">
             <div class="container">
-                <div class="row justify-content-center align-items-center" data-anime='{ "el": "childs", "translateY": [50, 0], "translateX": [-50, 0], "opacity": [0,1], "duration": 600, "delay":100, "staggervalue": 150, "easing": "easeOutQuad" }'>
-                    @foreach($categories as $slug => $name)
-                    <a href="{{ route('shp', ['category' => $slug]) }}"  class="col-lg-2 col-md-3 col-sm-4 col-6 my-2 text-center">
-                        <span class="label bg-grey rounded-2 shadow py-2 px-3 d-block text-center">{{ $name }}</span>
-                    </a>
-                @endforeach
+               
+                <div class="row row-cols-1 row-cols-lg-4 row-cols-md-3 row-cols-sm-2 justify-content-center align-items-center" data-anime='{ "el": "childs", "translateY": [50, 0], "translateX": [-50, 0], "opacity": [0,1], "duration": 600, "delay":100, "staggervalue": 150, "easing": "easeOutQuad" }'>
+                    <?php $i=0;?>
+                    @foreach($categories as $item)
+                    <!-- start categories item -->
+                    <div class="col categories-style-01 text-center mb-50px xs-mb-35px">
+                        <div class="categories-box">
+                            <div class="icon-box position-relative mb-10px">
+                                <a href="{{ route('shp', ['category' => $item['slug']]) }}"><img src="{{ asset($item['imagge']) }}" alt=""/></a>
+                                <div class="count-circle d-flex align-items-center justify-content-center w-35px h-35px bg-base-color text-white rounded-circle alt-font fw-600 fs-12">{{$i+1}}</div>
+                            </div>
+                            <a href="{{ route('shp', ['category' => $item['slug']]) }}" class="alt-font fw-600 fs-17 text-dark-gray text-dark-gray-hover">{{ ucwords($item['name']) }}</a>
+                        </div>
+                    </div>
+                    <!-- end categories item -->
+                    <?php $i++;?>
+                    @endforeach
+                  
                 </div>
             </div>
         </section>

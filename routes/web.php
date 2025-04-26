@@ -9,6 +9,7 @@ use App\Http\Controllers\StripeController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\ServicesController;
+use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\TestimonialController;
 use App\Http\Controllers\PagesettingsController;
 use App\Http\Controllers\Auth\AdminloginController;
@@ -142,6 +143,15 @@ Route::group(['prefix' => 'admin'],function(){
       Route::get('shop/product/{id}/edit', [ProductController::class,'edit'])->name('product.edit');
       Route::post('shop/product/update/{id}', [ProductController::class,'update'])->name('product.update');
       Route::get('shop/product/delete/{id}', [ProductController::class,'destroy'])->name('product.delete');
+
+      //category
+      Route::get('/category', [CategoriesController::class,'index'])->name('admin.category.index');
+      Route::get('/category/create', [CategoriesController::class,'create'])->name('admin.category.create');
+      Route::post('/category/store', [CategoriesController::class,'store'])->name('admin.category.store');
+      Route::get('/category/{id}/edit', [CategoriesController::class,'edit'])->name('admin.category.edit');
+      Route::post('/category/update/{id}', [CategoriesController::class,'update'])->name('admin.category.update');
+      Route::get('/category/delete/{id}', [CategoriesController::class,'destroy'])->name('admin.category.delete');
+
 
       //orders
         Route::get('/order',[OrdersController::class,'index'])->name('admin.order.index');

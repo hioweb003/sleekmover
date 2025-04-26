@@ -6,7 +6,7 @@
         @include("includes.header")
 
         <!-- start section -->
-        <section class="one-fourth-screen bg-dark-gray ipad-top-space-margin sm-mb-50px" data-parallax-background-ratio="0.5" style="background-image: url({{ asset($posts->) }})"></section>
+        <section class="one-fourth-screen bg-dark-gray ipad-top-space-margin sm-mb-50px" data-parallax-background-ratio="0.5" style="background-image: url({{ asset($posts->featured_image) }})"></section>
         <!-- end section -->
         <!-- start section -->
         <section class="p-0">
@@ -14,7 +14,7 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-10 overlap-section text-center">
                         <div class="p-10 box-shadow-extra-large border-radius-4px bg-white text-center">
-                            <a href="demo-logistics-latest-blog.html" class="bg-very-light-gray text-uppercase fs-13 ps-25px pe-25px fw-700 text-dark-gray text-dark-gray-hover lh-40 sm-lh-55 border-radius-100px d-inline-block mb-3 sm-mb-15px">Logistics</a>
+                            {{-- <a href="#" class="bg-very-light-gray text-uppercase fs-13 ps-25px pe-25px fw-700 text-dark-gray text-dark-gray-hover lh-40 sm-lh-55 border-radius-100px d-inline-block mb-3 sm-mb-15px"></a> --}}
                             <h3 class="text-dark-gray fw-700 ls-minus-1px mb-15px">{{ucwords($posts->post_title)}}</h3>
                             <div class="lg-20px sm-mb-0">
                                 <span>By <a href="#" class="text-dark-gray fw-500">{{$posts->user->name}}</a></span> on <a href="#" class="text-dark-gray fw-500">{{date("d M Y",strtotime($posts->created_at))}}</a>

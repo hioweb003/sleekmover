@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Order;
 use App\Models\Product;
 use Illuminate\Support\Str;
@@ -28,7 +29,8 @@ class ProductController extends Controller
     {    
       
       //dd( $category);
-        return view('admin.products.create')->with('orders',Order::where('status','pending')->get());
+        return view('admin.products.create')->with('orders',Order::where('status','pending')->get())
+                                            ->with('categories',Category::all());
                                
     }
 
@@ -50,7 +52,7 @@ class ProductController extends Controller
     
        $product = Product::create([
           'user_id' => $request->admin_id,
-          'category' => $request->category,
+          'category_id' => $request->category,
           'pro_name' => $request->pro_name,
           'slug' => Str::slug($request->pro_name),
           'description' => $request->description,
@@ -99,7 +101,8 @@ class ProductController extends Controller
     { 
         //$category = Subcategory::with(['categories'])->get();
         $productedit = Product::findorfail($id);
-        return view('admin.products.edit')->with('editpro', $productedit);
+        return view('admin.products.edit')->with('editpro', $productedit)
+                                           ->with('categories',Category::all());
     }
 
     /**
@@ -127,7 +130,7 @@ class ProductController extends Controller
             $productupdate->image = 'uploads/'.$updateimageNewName;
         }
         
-          $productupdate->category = $request->category;
+          $productupdate->category_id = $request->category;
           $productupdate->pro_name = $request->pro_name;
           $productupdate->slug = Str::slug($request->pro_name);
           $productupdate->description = $request->description;

@@ -33,13 +33,9 @@
                       <label for="category">Category</label>
                           <select class="form-control" name="category" required id="category">
                               <option selected disabled>Select...</option>
-                              <option value="boxes"> {{$editpro->category == "boxes" ? 'selected' : ''}} Boxes</option>
-                              <option value="equipment" {{$editpro->category == "equipment" ? 'selected' : ''}} >Equipment</option>
-                              <option value="mattress-covers" {{$editpro->category == "mattress-covers" ? 'selected' : ''}} >Mattress Covers</option>
-                              <option value="tv-art-boxes" {{$editpro->category == "tv-art boxes" ? 'selected' : ''}} >TV & Art Boxes</option>
-                              <option value="moving-kits" {{$editpro->category == "moving-kits" ? 'selected' : ''}} >Moving Kits</option>
-                              <option value="packing" {{$editpro->category == "packing" ? 'selected' : ''}} >Packing</option>
-                              <option value="wrapping" {{$editpro->category == "wrapping" ? 'selected' : ''}} >Wrapping</option>
+                              @foreach ($categories as $item)
+                              <option value="{{ $item->id }}" {{$editpro->category_id == $item->id ? 'selected' : ''}} >{{ucwords($item->cate_name)}}</option>
+                            @endforeach
                           </select>
                       </div> 
                    

@@ -62,9 +62,10 @@ class FrontendController extends Controller
     public function shop($category = null){
 
       $categories = $this->categorys();
-
+  
         if($category){
-            $products = Product::where('category',$category)->orderBy('id','DESC')->paginate(12);
+          $cate = Category::where('slug',$category)->first();
+            $products = Product::where('category_id',$cate->id)->orderBy('id','DESC')->paginate(12);
         }else{
             $products = Product::orderBy('id','DESC')->paginate(12);
         }

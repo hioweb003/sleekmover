@@ -32,10 +32,10 @@
                              <li class="grid-item">
                                 <div class="card border-0 border-radius-4px box-shadow-quadruple-large">
                                     <div class="blog-image">
-                                        <a href="" class="d-block"><img src="{{ asset($item->featured_image) }}" alt="" /></a>
+                                        <a href="{{ route('singles',['slug' => $item->post_slug]) }}" class="d-block"><img src="{{ asset($item->featured_image) }}" alt="" /></a>
                                     </div>
                                     <div class="card-body p-13 md-p-11">
-                                        <a href="" class="card-title mb-15px fw-600 fs-20 text-dark-gray d-inline-block">{{ucwords($item->post_title)}}</a>
+                                        <a href="{{ route('singles',['slug' => $item->post_slug]) }}" class="card-title mb-15px fw-600 fs-20 text-dark-gray d-inline-block">{{ucwords($item->post_title)}}</a>
                                         <p>{!! Str::words($item->post_description,'12','...') !!}</p>
                                        
                                     </div>

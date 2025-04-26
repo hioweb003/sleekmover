@@ -27,7 +27,7 @@
                     <div class="col-xl-5 col-lg-6 col-md-10 offset-xl-1" data-anime='{ "el": "childs", "translateY": [30, 0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 300, "easing": "easeOutQuad" }'>
                         <h2 class="fw-700 ls-minus-1px text-dark-gray mb-20px">Your favourite Movers. </h2>
                         <p class="w-90 lg-w-100">
-                            {{ $abt ? $abt->content : '' }}"
+                            {!! $abt ? $abt->content : '' !!}"
                         </p>
                        
                         
