@@ -207,7 +207,7 @@ class AdminController extends Controller
               return redirect()->route('news')->with('success','Broadcast Message Sent Successfully');
         }
   
-             //faq
+    //faq
      public function faqpage(){
       return view('admin.faq.index')->with('faqlist',Faq::all());
                                                                   
